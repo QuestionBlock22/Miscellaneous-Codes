@@ -1,0 +1,5 @@
+No ESRB Screen for Mario Kart Channel (QB22)
+
+041DD72C 4800022
+
+A port of Diamond's No ESRB Screen code to Mario Kart Channel. Only useful for patching the channel executable itself. Credit to Diamond for the original code and Vega for the analysis used as reference.
