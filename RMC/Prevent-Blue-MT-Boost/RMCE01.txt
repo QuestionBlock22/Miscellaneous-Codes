@@ -1,0 +1,5 @@
+Prevent Blue Mini-Turbo Boost (QB22)
+
+0457c770 40810284
+
+Prevents the game from applying a blue mini-turbo boost. Best used in conjunction with Vabold and Gaberboo's snaking code or ImZeraora's C++ port as well as tZ's Orange MT on Bikes code.
