@@ -1,0 +1,9 @@
+C261AEC4 00000006
+3D80809B 818CBD68
+800C0B70 2C000001
+40820014 3D808061
+618CAED0 7D8903A6
+4E800420 3880002C
+60000000 00000000
+
+Consistency fix for the code "Watch Replays After Regular VS Races" Removes the quit confirmation screen if the current game mode is VS.
