@@ -1,0 +1,15 @@
+Play the Boss Win Music After Beating a Boss Tournament/Competition [QB22]
+C2711FAC 0000000B
+3C60809C 8063D728
+80030B90 5400077B
+41820040 3C60809C
+38000000 98010008
+38810008 80632144
+2C030000 41820024
+3D808066 9001000C
+618CC8D8 7D8903A6
+4E800421 8061000C
+88030044 901E0074
+3C60809C 00000000
+
+Fixes the failure to playback the boss win fanfare after completing a boss tournament/competition. There is no support for the unused mission mode, for now. However, you can use 456's code "Play o_FanfareMIwin_32 and o_FanfareMIWinBoss_32 in Mission Mode's result" as a suplement. Inspired by mkwcat's implementation, but hooks at the source of the bug.
