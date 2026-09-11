@@ -1,0 +1,7 @@
+Use the Battle Countdown Sounds on Galaxy Colosseum/Galaxy Arena [QB22]
+047166d4 41820020
+C27166D0 00000002
+2C800029 2D000036
+4C455182 00000000
+
+Forces the game to use the battle countdown sounds when on the Galaxy Colosseum slot.
