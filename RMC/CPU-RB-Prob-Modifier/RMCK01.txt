@@ -1,0 +1,5 @@
+CPU Rubber Banding Probability Modifier [QB22]
+
+028b9842 0000YYYY
+
+Replace "YYYY" with any integer value converted to hexadecimal.
