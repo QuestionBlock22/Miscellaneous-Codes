@@ -36,7 +36,7 @@ case_facePlayer (case 4)
 case_attack (case 5)
 case_unknown6 (case 6)
 case_turn (case 7)
-case_hide (case 8) Tells ModelDirector to set the opacity to 0.
+case_hide (case 8)
 case_cower (case 9)
 case_delete (case 10) This one's neat in that they shrink like players do at the end of a Ghost Replay.
  */
