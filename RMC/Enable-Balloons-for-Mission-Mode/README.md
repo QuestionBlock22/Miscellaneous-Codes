@@ -4,7 +4,7 @@ This is a gecko code that enables the balloon object in Mission Mode.
 
 This code comes with an optional fix for the balloon height of any vehicle that is neither the Standard Kart or Standard Bike, courtesty of mkwcat and stebler.
 
-Further, this code is best used with the codes [Add Mission Mode "Failed" Features](https://mariokartwii.com/showthread.php?tid=2740) and Force Bosses to Idle on Mission Fail by which functionality is added that the aforementioned codes can read.
+Further, this code is best used with the codes [Add Mission Mode "Failed" Features](https://mariokartwii.com/showthread.php?tid=2740) and [Force Bosses to Idle On Mission Fail](https://mariokartwii.com/showthread.php?tid=2808) by which functionality is added that the aforementioned codes can read.
 
 ### Usage
 In the file *mission_single.kmt,* set the boolean offset 0x2b, an offset the Wiiki presumes is "padding," to either 0, Off, or 1, On. Save the file and test.
