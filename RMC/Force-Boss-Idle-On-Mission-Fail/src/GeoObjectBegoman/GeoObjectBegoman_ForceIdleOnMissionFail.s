@@ -12,7 +12,7 @@
     .set sectionMgrBase, 0x809c1e38
 .elseif (region == 'E' || region == 'e')
     .set raceInfoBase, 0x809c7090
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 .elseif (region == 'J' || region == 'j')
     .set raceInfoBase, 0x809c3870
     .set sectionMgrBase, 0x809c0e98
@@ -36,7 +36,7 @@ case_facePlayer (case 4)
 case_attack (case 5)
 case_unknown6 (case 6)
 case_turn (case 7)
-case_hide (case 8)
+case_hide (case 8) Sets opactiy to 0.
 case_cower (case 9)
 case_delete (case 10) This one's neat in that they shrink like players do at the end of a Ghost Replay.
  */

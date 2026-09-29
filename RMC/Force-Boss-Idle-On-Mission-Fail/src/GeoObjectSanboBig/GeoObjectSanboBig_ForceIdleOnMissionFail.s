@@ -21,7 +21,7 @@
 .elseif (region == 'E' || region == 'e')
     # Pointers
     .set raceInfoBase, 0x809c7090
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 
     # Functions
     .set AnimationMgr_playAnimation, 0x80553304
