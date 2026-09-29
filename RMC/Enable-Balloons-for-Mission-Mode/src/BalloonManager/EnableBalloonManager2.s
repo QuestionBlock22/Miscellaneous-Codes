@@ -17,7 +17,7 @@
 .elseif (region == 'E' || region == 'e')
     # Pointers:
     .set raceDataBase, 0x809c7098
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 
     # Return Address:
     .set return, 0x80865404

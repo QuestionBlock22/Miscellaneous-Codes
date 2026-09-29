@@ -19,7 +19,7 @@
     # Pointers
     .set raceDataBase, 0x809c7098
     .set raceInfoBase, 0x809c7090
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 
     # Return Address
     .set return, 0x80530f68

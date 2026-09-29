@@ -18,7 +18,7 @@
     .set return, 0x80572a88
 .elseif (region == 'E' || region == 'e')
     # Pointers:
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 
     # Functions:
     .set RaceModeBalloonBattle_onRemoval, 0x80533c28

@@ -30,7 +30,7 @@
     .set RaceModeBalloonBattle_onCourseCollisionHit, 0x80538ce0
 .elseif (region == 'E' || region == 'e')
     # Pointers:
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 
     # Functions:
     .set RaceModeBalloonBattle_removePoints, 0x80534078

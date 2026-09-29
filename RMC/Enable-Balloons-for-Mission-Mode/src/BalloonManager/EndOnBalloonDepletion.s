@@ -21,7 +21,7 @@
     # Pointers:
     .set raceDataBase, 0x809c7098
     .set raceInfoBase, 0x809c7090
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 
     # Functions:
     .set RaceModeMissionRunCompetition_canEndRace, 0x8055008c

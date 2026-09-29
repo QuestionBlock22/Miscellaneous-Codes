@@ -33,7 +33,7 @@
     .set sectionMgrBase, 0x809c1e38
 .elseif (region == 'E' || region == 'e')
     .set raceDataBase, 0x809c7098
-    .set sectionMgrBase, 0x809bd508
+    .set sectionMgrBase, 0x809cd508
 .elseif (region == 'J' || region == 'j')
     .set raceDataBase, 0x809c3878
     .set sectionMgrBase, 0x809c0e98
