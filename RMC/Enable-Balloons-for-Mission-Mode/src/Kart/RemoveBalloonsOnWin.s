@@ -71,9 +71,7 @@ lwz r0, 0x28 (r11)
 cmpwi r0, 4
 bne end
 
-# Fix a bug where the mission type "LapRun01" disables the winning animation if one of the upper bits were set. Balloons only need to be hidden once.
-cmpwi r6, MR_MODE_LAPRUN01
-bne mrEnd
+# Fix a bug where the winning animation is disabled if one of the upper bits were set. Balloons only need to be hidden once.
 li r0, 0x1
 slwi r0, r0, 20
 sub r4, r4, r0
