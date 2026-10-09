@@ -52,6 +52,7 @@ def getBaseAddress(regionLetter):
     EnableBalloonManager2 = "80869818"
     EndOnBalloonDepletion = "8086a0c8"
     HalfWordOverwriteFix = "80535a9c"
+    RequiredScoreFix = "8053db7c"
     EnableBalloonRemoval = "805729c8"
     EnableInvincibility = "8056747c"
     HookFix = "80573bdc"
@@ -66,13 +67,14 @@ def getBaseAddress(regionLetter):
         EnableBalloonManager2, # 1
         EndOnBalloonDepletion, # 2
         HalfWordOverwriteFix, # 3
-        EnableBalloonRemoval, # 4
-        EnableInvincibility, # 5
-        HookFix, # 6
-        PreventIncrementingBattleScore, # 7
-        RemoveBalloonsOnWin, # 8
-        RemoveOnItemHit, # 9
-        RemoveOnObjectHit, # 10
+        RequiredScoreFix, # 4
+        EnableBalloonRemoval, # 5
+        EnableInvincibility, # 6
+        HookFix, # 7
+        PreventIncrementingBattleScore, # 8
+        RemoveBalloonsOnWin, # 9
+        RemoveOnItemHit, # 10
+        RemoveOnObjectHit, # 11
     ]
 
     list(OrderedDict.fromkeys(baseAddress))
@@ -85,37 +87,40 @@ def getBaseAddress(regionLetter):
         baseAddress[1] = "808653e8"
         baseAddress[2] = "80865c98"
         baseAddress[3] = "80530f54"
-        baseAddress[4] = "8056db78"
-        baseAddress[5] = "805630fc"
-        baseAddress[6] = "8056ed8c"
-        baseAddress[7] = "80533d34"
-        baseAddress[8] = "8058fdcc"
-        baseAddress[9] = "8056db84"
-        baseAddress[10] = "8056d3b4"
+        baseAddress[4] = "805500d4"
+        baseAddress[5] = "8056db78"
+        baseAddress[6] = "805630fc"
+        baseAddress[7] = "8056ed8c"
+        baseAddress[8] = "80533d34"
+        baseAddress[9] = "8058fdcc"
+        baseAddress[10] = "8056db84"
+        baseAddress[11] = "8056d3b4"
     elif regionLetter == 'j' or regionLetter == 'J':
         baseAddress[0] = "80868e54"
         baseAddress[1] = "80868e84"
         baseAddress[2] = "80869734"
         baseAddress[3] = "8053541c"
-        baseAddress[4] = "80572348"
-        baseAddress[5] = "80566dfc"
-        baseAddress[6] = "8057355c"
-        baseAddress[7] = "805381fc"
-        baseAddress[8] = "80595f70"
-        baseAddress[9] = "80572354"
-        baseAddress[10] = "80571b84"
+        baseAddress[4] = "8053d4fc"
+        baseAddress[5] = "80572348"
+        baseAddress[6] = "80566dfc"
+        baseAddress[7] = "8057355c"
+        baseAddress[8] = "805381fc"
+        baseAddress[9] = "80595f70"
+        baseAddress[10] = "80572354"
+        baseAddress[11] = "80571b84"
     elif regionLetter == 'k' or regionLetter == 'K':
         baseAddress[0] = "80857ba8"
         baseAddress[1] = "80857bd8"
         baseAddress[2] = "80858488"
         baseAddress[3] = "80523af4"
-        baseAddress[4] = "80560a20"
-        baseAddress[5] = "805554d4"
-        baseAddress[6] = "80561c34"
-        baseAddress[7] = "805268d4"
-        baseAddress[8] = "80584648"
-        baseAddress[9] = "80560a2c"
-        baseAddress[10] = "8056025c"
+        baseAddress[4] = "8052bbd4"
+        baseAddress[5] = "80560a20"
+        baseAddress[6] = "805554d4"
+        baseAddress[7] = "80561c34"
+        baseAddress[8] = "805268d4"
+        baseAddress[9] = "80584648"
+        baseAddress[10] = "80560a2c"
+        baseAddress[11] = "8056025c"
 
     return baseAddress
 
@@ -123,14 +128,14 @@ def writeTempFile(regionLetter, curDir, addressCycle, baseAddress, tempCode, asm
     with open(codeFile, 'r') as code, open(tempCode, 'w') as tmp:
         tmp.write(f".set region, '{regionLetter}'\n\n")
 
-        if fileCycle >= 10 or fileCycle <= 22:
+        if fileCycle >= 11 or fileCycle <= 23:
             tmp.write(f".set version, '{hookVersion}'\n\n")
         for line in code:
             tmp.write(line)
 
     print(baseAddress[addressCycle])
 
-    if fileCycle >= 10:
+    if fileCycle >= 11:
         print(file)
     else:
         print(file.name)
@@ -149,7 +154,7 @@ def writeTempFile(regionLetter, curDir, addressCycle, baseAddress, tempCode, asm
 
 def processOutOfOrderFiles(regionLetter, file, OOO_FileIndex, job):
     if file == OOO_FileIndex[0]: # "EnableInvincibility.s"
-        addressCycle = 5
+        addressCycle = 6
 
         if regionLetter == 'p' or regionLetter == 'P':
             versions = [
@@ -177,7 +182,7 @@ def processOutOfOrderFiles(regionLetter, file, OOO_FileIndex, job):
             ]
 
     if file == OOO_FileIndex[1]: # RemoveOnObjectHit.s"
-        addressCycle = 10
+        addressCycle = 11
 
         if regionLetter == 'p' or regionLetter == 'P':
             versions = [
@@ -201,7 +206,7 @@ def processOutOfOrderFiles(regionLetter, file, OOO_FileIndex, job):
             ]
 
     if file == OOO_FileIndex[2]: # "EnableBalloonRemoval.s"
-        addressCycle = 4
+        addressCycle = 5
         
         if regionLetter == 'p' or regionLetter == 'P':
             versions = [
@@ -229,7 +234,7 @@ def processOutOfOrderFiles(regionLetter, file, OOO_FileIndex, job):
             ]
 
     if file == OOO_FileIndex[3]: # "PreventIncrementingBattleScore.s"
-        addressCycle = 7
+        addressCycle = 8
 
         if regionLetter == 'p' or regionLetter == 'P':
             versions = [
@@ -253,7 +258,7 @@ def processOutOfOrderFiles(regionLetter, file, OOO_FileIndex, job):
             ]
 
     if file == OOO_FileIndex[4]: # "HookFix.s"
-        addressCycle = 6
+        addressCycle = 7
         
         if regionLetter == 'p' or regionLetter == 'P':
             versions = [
@@ -309,14 +314,14 @@ def assembleFromFile(regionLetter, curDir, addressCycle, finalOut):
 
         writeTempFile(regionLetter, curDir, addressCycle, baseAddress, tempCode, asmOut, codeFile, file, fileCycle, finalOut, hookVersion)
 
-        if addressCycle == 3:
+        if addressCycle == 4:
             return
-        if addressCycle == 10:
+        if addressCycle == 11:
             break
 
         addressCycle += 1
 
-    if addressCycle == 10:
+    if addressCycle == 11:
         fileCycle = addressCycle
 
         for file in OOO_FileIndex:
@@ -353,7 +358,7 @@ def assembleASMCode(regionLetter, finalOut):
 
     # Kart
     curDir = kartDir
-    addressCycle = 4
+    addressCycle = 5
 
     assembleFromFile(regionLetter, curDir, addressCycle, finalOut)
 
