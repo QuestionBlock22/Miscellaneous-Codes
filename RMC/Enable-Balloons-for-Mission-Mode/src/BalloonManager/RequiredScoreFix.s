@@ -12,33 +12,21 @@
     .set raceDataBase, 0x809c28d8
     .set raceInfoBase, 0x809c28d0
     .set sectionMgrBase, 0x809c1e38
-
-    # Return Address
-    .set return, 0x80535ab0
 .elseif (region == 'E' || region == 'e')
     # Pointers
     .set raceDataBase, 0x809c7098
     .set raceInfoBase, 0x809c7090
     .set sectionMgrBase, 0x809cd508
-
-    # Return Address
-    .set return, 0x80530f68
 .elseif (region == 'J' || region == 'j')
     # Pointers
     .set raceDataBase, 0x809c3878
     .set raceInfoBase, 0x809c3870
     .set sectionMgrBase, 0x809c0e98
-
-    # Return Address
-    .set return, 0x80535430
 .elseif (region == 'K' || region == 'k')
     # Pointers
     .set raceDataBase, 0x809b4298
     .set raceInfoBase, 0x809b4290
     .set sectionMgrBase, 0x809b0478
-
-    # Return Address
-    .set return, 0x80523b08
 .else
     .err
 .endif
@@ -58,7 +46,7 @@ lwz r6, sectionMgrBase@l (r5)
 lwz r7, 0 (r6)
 cmpwi r7, 0
 beq end
-lwz r0, 0 (r7)                             # sectionMgr->currentSection
+lwz r0, 0 (r7)                              # sectionMgr->currentSection
 cmpwi r0, SECTION_COMPETITION
 beq end
 
