@@ -23,9 +23,6 @@
     .err
 .endif
 
-.set SMT_CHARGED, 0x3
-.set CLASS_100cc, 0x1
-
 .set DODGE_FAILED, 0
 .set DODGE_SUCCESS, 0x1
 .set DODGE_ASSISTED, 0x2
