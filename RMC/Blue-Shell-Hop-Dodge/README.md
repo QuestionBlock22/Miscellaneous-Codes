@@ -1,6 +1,6 @@
 ## Dodge Blue Shell with Timed Hop and Mini-Turbo
 
-This is a gecko code that restores dodging the Blue Shell using a mini-turbo boost and well timed hop, just like in Mario Kart DS. Note: This is not a port of lanny's hop dodge code, but instead a different implementation inspired by it. In fact, this implementation is based on [prior research](https://x.com/B_squo/status/2038704243381538871#m) done by B_Squo! The result is an implementation more faithful to its original functionality than any other.
+This is a gecko code that restores dodging the Blue Shell using a mini-turbo boost and well timed hop, just like in Mario Kart DS. Note: This is not a port of lanny's hop dodge code. In fact, this implementation is based on [prior research](https://x.com/B_squo/status/2038704243381538871#m) done by B_Squo! The result is an implementation more faithful to its original functionality than any other.
 
 The following codes are best used as companions to this one:
 
