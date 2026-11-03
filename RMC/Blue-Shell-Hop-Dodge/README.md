@@ -25,8 +25,7 @@ To assemble this code, PyiiASMH must be downloaded from "Releases" and put in to
 
 
 ### Credits
-
-Melg and Brawlboxgaming - Pulsar, used as reference.
-B_Squo - Documenting the Blue Shell dodge state + addresses.
-lanny - Original Blue Shell Hop-Dodge implementation that inpsired this project.
-Ghidra Project - Function names and symbol map.
+* Melg and Brawlboxgaming - Pulsar, used as reference.
+* B_Squo - Documenting the Blue Shell dodge state + addresses.
+* lanny - Original Blue Shell Hop-Dodge implementation that inpsired this project.
+* Ghidra Project - Function names and symbol map.
