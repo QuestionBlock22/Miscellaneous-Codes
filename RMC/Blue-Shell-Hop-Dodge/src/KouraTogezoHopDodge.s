@@ -56,7 +56,7 @@ mtctr r12
 bctr
 
 revokeDodge:
-# Revoke dodge status if the conditions are no longer true and the player is no longer in the hop state.
+# Revoke dodge status if the above conditions are no longer true.
 li r0, DODGE_FAILED
 stb r0, 0x2f6 (r30)
 stb r0, 0x2f7 (r30)
