@@ -116,8 +116,8 @@ lwz r5, 0x18 (sp)
 li r4, 0
 bl getAnimationGroup
 li r4, 1
-lfs f1, 0 (r5)
 lis r12, Group_setAnimationAndDisable@h
+lfs f1, 0 (r5)
 ori r12, r12, Group_setAnimationAndDisable@l
 mtctr r12
 bctrl											# Group::setAnimationInactive
@@ -130,15 +130,15 @@ lfs f1, 0 (r5)
 li r4, 1
 lwz r6, 0 (r3)
 addi r6, r6, 0x10
-lfd f2, 0x8 (r5)
-stfs f2, 0x8 (r6)								# Set new speed.
-stb r4, 0xc (r6)								# Reverse/rewind the animation.
 lis r12, Group_setAnimation@h
+lfd f2, 0x8 (r5)								# Get new speed.
 ori r12, r12, Group_setAnimation@l
+stfs f2, 0x8 (r6)								# Set new speed.
 mtctr r12
+stb r4, 0xc (r6)								# Reverse/rewind the animation.
 bctrl											# Group::setAnimation
 
-# Hide the control on frame 10.
+# Reset default speed on frame 10.
 hideControl:
 li r4, 0
 bl getAnimationGroup
@@ -148,14 +148,6 @@ lfs f2, 0x3c (r3)
 fcmpo cr0, f2, f1
 crand 4*cr0+eq, 4*cr0+eq, 4*cr0+eq
 bne end
-li r4, 1
-lis r12, Group_setAnimationAndDisable@h
-lfs f1, 0x4 (r5)
-ori r12, r12, Group_setAnimationAndDisable@l
-mtctr r12
-bctrl											# Group::setAnimationInactive
-
-# Reset default speed.
 li r4, 0
 bl getAnimationGroup
 lwz r5, 0x18 (sp)
@@ -169,8 +161,8 @@ pop
 
 getAnimationGroup:
 mr r3, r30
-addi r3, r3, 0x98
 lis r12, Animator_getGroup@h
+addi r3, r3, 0x98
 ori r12, r12, Animator_getGroup@l
 mtctr r12
-bctr
+bctr											# Animator::getGroup
